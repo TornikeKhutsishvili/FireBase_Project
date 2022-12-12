@@ -1,0 +1,27 @@
+.breadcrumb-text{
+    border-bottom: 1px solid #ebebeb;
+    padding: 15px 0;
+}
+.breadcrumb-text a{
+    display: inline-block;
+    font-size: 16px;
+    color: #252525;
+    margin-right: 15px;
+    position: relative;
+}
+.breadcrumb-text span{
+    display: inline-block;
+    color: #b2b2b2;
+    margin-left: 15px;
+}
+.breadcrumb-text a:hover{
+    color: #252525;
+}
+.kidsinfor .col-md-5{
+    padding: 60px 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}

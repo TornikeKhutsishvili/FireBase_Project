@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="men.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Mr+Bedfort&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Nothing+You+Could+Do&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <title>men</title>
+</head>
+<body>
+   
+    <!-- header -->
+    <header>
+        <div class="leftdiv">
+            <div class="imgdiv">
+                <a href="https://colorlib.com/wp/templates/" title="Switcher"><img src="data:image/webp;base64,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" alt="colorlib"></a>
+            </div>
+            <div class="fashi">
+                <a href="#" title="Select aProduct"><span>+ FASHI</span></a>
+            </div>
+        </div>
+        <div class="rightdiv">
+            <div class="desktop desktop-btn header-btn pull-right hidden-xs visible" style="opacity: 1; visibility: visible;">
+                <a href="#" title="Desktop View"><i class="fa-solid fa-desktop"></i></a>
+            </div>
+            <div class="tablet tablet-btn header-btn pull-right hidden-xs visible" style="opacity: 1; visibility: visible;">
+                <a href="#" title="Tablet View"><i class="fa-solid fa-tablet"></i></a>
+            </div>
+            <div class="mobile mobile-btn header-btn pull-right hidden-xs visible" style="opacity: 1; visibility: visible;">
+                <a href="#" title="Smartphone View"><i class="fa-solid fa-mobile-button"></i></a>
+            </div>
+            <div class="purchase-btn header-btn pull-right">
+                <a href="#" title="Buy now"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="close remove-btn header-btn pull-right">
+                <a href="#" title="Close this bar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- resdiv -->
+    <div class="resdiv">
+        <a href="#" title="Prev" class="lefta"><i class="fa-solid fa-caret-left"></i></a>
+        <a href="#" title="Next" class="righta"><i class="fa-solid fa-caret-right"></i></a>
+    </div>
+    <!-- header top -->
+    <div class="header_top">
+        <div class="container">
+            <div class="emaildiv">
+                <i class="fa-sharp fa-solid fa-envelope"></i>
+                <span>hello.colorlib@gmail.com</span>
+            </div>
+            <div class="nomercoindiv">
+                <div class="nomerdiv">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="nom">+65 11.188.888</span>
+                </div>
+                <div class="coindiv">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </div>
+            </div>
+            <div class="countrydiv">
+                <div class="">
+                    <img class="imgeng" src="https://preview.colorlib.com/theme/fashi/img/flag-1.jpg.webp" alt="English">
+                    <img class="imgger" src="https://preview.colorlib.com/theme/fashi/img/flag-2.jpg.webp" alt="German">
+                    <select class="lang">
+                        <option value="eng"> English </option>
+                        <option value="ger"> German </option>
+                    </select>
+                </div>
+            </div>
+            <div class="logindiv">
+                <i class="fa fa-user"></i>
+                <a href="#" class="login-panel">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- inner hearder -->
+    <div class="container">
+        <div class="inner-header">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="logo">
+                        <a href="#">
+                        <img src="data:image/webp;base64,UklGRiIBAABXRUJQVlA4TBYBAAAvV4AFEI9AkG1Tmale/QoCgSSZ/R0mEwikOIsJJsi2me3sd4QnqI+dXRCQJElyImW2pBoadv7/3BKoVceI/k8AXplJUhCvJJkR3Xky/1cJnn3JhT/LXEjWgU6S3ZiSSBbZQ6OS7NPIJCl3Ce0aafTb7lXa8zErT6rGqDjBfEtww5EumIym4xzXhwh1nRjJG6pMTCns8OrEYshDisoAsJ3o0Nv00gEgqf6QpEShOFORVQZMowNAVe0OQZB6NZqDxdB99yRQn3Fcg1Ecpv0tMMQoAQBDimK76/Nlfi4oqqiNnkzoI5NMrxHFNjGydyQWWYE1keRrdiPagcFweQ3kghob78Hi1O6MHBG8CFsnWQc8YJWssux4DA==" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    <div class="advanced-search">
+                        <select id="categories">
+                            <option value="">All Categories</option>
+                            <option value="trousers">Trousers</option>
+                            <option value="sweater">Sweater</option>
+                            <option value="jackets">Jackets</option>
+                            <option value="shoes">Shoes</option>
+                        </select>
+                        <img src="https://t3.ftcdn.net/jpg/03/63/34/70/360_F_363347020_YzZc2x3LI8fTfVXvGVPTXTrkOAJ1MR4l.jpg" alt="" style="background-color: white;">
+                        <div class="input-group">
+                            <input type="text" placeholder="What do you need?">
+                            <button type="button" class="What_do_you_need_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-right col-md-3">
+                    <ul class="nav-right">
+                        <li class="heart-icon">
+                            <a href="#">
+                                <i class="fa-regular fa-heart"></i>
+                                <span class="one">1</span>
+                            </a>
+                        </li>
+                        <li class="cart-icon">
+                            <a class="cart_icon_a" href="#">
+                                <i class="fa-regular fa-clipboard"></i>
+                                <span class="three">3</span>
+                            </a>
+                            <div class="cart-hover cart_hover">
+                                <div class="select-items">
+                                    <table>
+                                        <tbody>
+                                            <tr class="tbody_tr1">
+                                                <td class="si-pic">
+                                                    <img src="data:image/webp;base64,UklGRvABAABXRUJQVlA4IOQBAABwDACdASpGAEYAPm0ylkckIyIhqlQKWIANiWcA1WGLg72RTlG9GjOvoizGSSN+36xyU/QF8a+os7ZJl6KvZmgfSQR3wWzyvkGUg3tuYZWJRVVG69yP7mbdiW0zUo1ek4m4/ruMa8+jXfpPAwAA/vsNFaChzMEk1xhyOA+1fI7xPdgjri8iBhHMyY4ZV/4wFnSzpBDIm6yy+jLMsuhCcFexgVBv4AIoqE5gIOcD8A6hMsGruOzWGaQFFg47OqZS/AlsbLGS0Qtx3jWnANWHRF9cg4uIW+O4H4/dz+NejgEYbZwNZ7ClvsSqnEKiTJ5iL9IMtY72Ie5RoXnKiB3zL3ZEBi7JyPqE0ZfNLxwCKBxcNcRGvPHotGMLhdqhP7mfLftB5zV8Kajftr99adPh7Cdiznjnj22LIpTHXOLFCDSoEgEX+lVO06nJ9gSZuVRzXnkjSVLeVUk9BYWG7eLVUcCU90FSpvqIPp2eTxh8opmmGmraWzr39KAEomEGvOZ9ahfHYR5n0zKh+u9BFze2VfX9jrTjA6+sIAMNwYc3rSJjrFy+XHjvLFeU251btGRtxFZ6iU9aIndcMwM6l5xddY9Vk+N1OCgj9YpM8NmlzcBCwnfSEf4pXa8LrvK+YZRBweAamEAA" alt="">
+                                                </td>
+                                                <td class="si-text">
+                                                    <div class="product-selected">
+                                                        <p>$60.00 x 1</p>
+                                                        <h6>Kabino Bedside Table</h6>
+                                                    </div>
+                                                </td>
+                                                <td class="si-close">
+                                                    <i id="si-close1" class="fa-solid fa-xmark"></i>
+                                                </td>
+                                            </tr>
+                                            <tr class="tbody_tr2">
+                                                <td class="si-pic">
+                                                    <img src="data:image/webp;base64,UklGRvoCAABXRUJQVlA4IO4CAADwDwCdASpGAEYAPm0ylEekIyIhqPSaqIANiUAPL0RW+XgJ/9jdAc7B6AN4p/Y72GP1g61HIo9pd64x62+s5egH1O1soy7olYtrms4m5OqZvtFnRDgQ42YjdeW2lK//Bwa0IGb4Qzr4JK/v4QQ8I82bQDDdg44JhemmweUMZX9IxvW6NHN+neIAAP77cJfuudPn0fnL2+D4z++Q5HQxog9JjomGB25aDxX94c9dm9UFpwO8zeL+6sX1uuE6AanashgDRWP+jIzBH/L7bGvuav8mhkJ7K2N3pclwXzcv/4yw5VCZ77U1muEDydjtjTz6v9JguxcYzOnMIt93X7rhMb5lzPy9B6mjo9zQCbEbnycly5z0Pc3Rqs61vGUSwpvOV5F89sfFl5PiiU0wRy7doiE+dJvVCt/jC09tPz8GwcQaZMUwSAzKyxpmZsutI1vLrApYyxM+Ko9LFvrhEE/lyin7OeMmK7nTGlHqQYujJuHT83gq//EZJu3F1E1v1KxmANB0zlejc2ZNQ1kY7nbwmGugbv7siU6dS+wUHTkyBP1PVa/g7oICmVxySRkr/j/8HrbIXfHTmsee1rhMqn8NP3g5R1sj97px2X2ArmhYxAemzHSjj4+ztFN9fKzA8wRV6xAG+xiTSTkyzIreX9h+BY6zGx6RJrz48B/ntbqW/F5avaSHuXoIdH85kJcbV4A9T4U/yWmueN9XARZ2OOz9AQ16TsZSNJPG/KMyOgmhIAWbIfabZwe8BwQrh8mtFRzyjORgDQ6H0tetZOnV8P65ELc8eBChpR1lsbwT2gfwUQGJVA4YNY3UMDOrnLUr6mysT0K2mcHwiik6bElrIPppkTGFOlU2GcUBWdOv+hV8lf2CQ+fbvarWZzsS5uC1nBYsjBsexYqMRQrQ5uwkxbmR7IDKCx/URHe+4FnCf14Hy93SIM4M9foR6lMsFwujSqNSVWIifStpfuJuMYpG5S//yz/BwxHz/ur/VLVm06x+AAA=" alt="">
+                                                </td>
+                                                <td class="si-text">
+                                                    <div class="product-selected">
+                                                        <p>$60.00 x 1</p>
+                                                        <h6>Kabino Bedside Table</h6>
+                                                    </div>
+                                                </td>
+                                                <td class="si-close">
+                                                    <i id="si-close2" class="fa-solid fa-xmark"></i>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="select-total">
+                                    <span>total:</span>
+                                    <h5>$120.00</h5>
+                                </div>
+                                <div class="select-button">
+                                    <a href="#" class="primary-btn view-card">VIEW CARD</a>
+                                    <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cart-price">$150.00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- nav item -->
+    <div class="nav-item">
+        <div class="container">
+            <div class="nav_depart">
+                <div class="depart-btn">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>All departments</span>
+                    <ul class="depart_hover">
+                        <li><a href="#">Women’s Clothing</a></li>
+                        <li class="active"><a href="#">Men’s Clothing</a></li>
+                        <li><a href="#">Underwear</a></li>
+                        <li><a href="#">Kid's Clothing</a></li>
+                        <li><a href="#">Brand Fashion</a></li>
+                        <li><a href="#">Accessories/Shoes</a></li>
+                        <li><a href="#">Luxury Brands</a></li>
+                        <li><a href="#">Brand Outdoor Apparel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="nav-menu mobile-menu">
+                <ul class="nav-menu-ul">
+                    <li><a href="user.html">Home</a></li>
+                    <li><a href="pages-shopping.html">Shop</a></li>
+                    <li class="collections"><a href="#">Collection</a>
+                        <ul class="collect dropdown">
+                            <li class="active"><a href="men.html">Men's</a></li>
+                            <li><a href="women.html">Women's</a></li>
+                            <li><a href="kids.html">Kid's</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pages-blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="pag"><a href="#">Pages</a>
+                        <ul class="pagg dropdown">
+                            <li><a href="pages-blog.html">Blog Details</a></li>
+                            <li><a href="pages-shopping.html">Shopping Cart</a></li>
+                            <li><a href="#">Checkout</a></li>
+                            <li><a href="#">Faq</a></li>
+                            <li><a href="pages-reg.html">Register</a></li>
+                            <li><a href="pages-log.html">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- nav item bottom -->
+    <div class="nav-item-bottom">
+        <div class="container">
+            <div class="mobile-menu-wrap">
+                <div class="slicknav_menu">
+                    <a href="#" class="slicknav_btn slicknav_collapsed" style="outline: none;">
+                        <span class="slicknav_menutxt">MENU</span>
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                    <nav class="slicknav_nav slicknav_hidden" style="display: none;">
+                        <ul>
+                            <li>
+                                <a href="user.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="pages-shopping.html">Shop</a>
+                            </li>
+                            <li class="slicknav_collapsed slicknav_parent collection">
+                                <a href="#">Collection <i id="caret_right_collec" class="fa-solid fa-caret-right"></i></a>
+                                <ul class="collectionul dropdown slicknav_hidden">
+                                    <li class="active"><a href="men.html">Men's</a></li>
+                                    <li><a href="women.html">Women's</a></li>
+                                    <li><a href="kids.html">Kid's</a></li>
+                                </ul>
+                            </li>
+                            <li class="blog">
+                                <a href="pages-blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                            <li class="slicknav_collapsed slicknav_parent pages">
+                                <a href="#">Pages <i id="caret_right_page" class="fa-solid fa-caret-right"></i></a>
+                                <ul class="pagesul dropdown slicknav_hidden">
+                                    <li><a href="pages-blog.html">Blog Details</a></li>
+                                    <li><a href="pages-shopping.html">Shopping Cart</a></li>
+                                    <li><a href="#">Checkout</a></li>
+                                    <li><a href="#">Faq</a></li>
+                                    <li><a href="pages-reg.html">Register</a></li>
+                                    <li><a href="pages-log.html">Login</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- carusel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <span>Bag,kids</span>
+                        <h1>Black friday</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore</p>
+                        <a href="#" class="primary-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="off-card">
+                    <h2>Sale <span>50%</span></h2>
+                </div>
+            </div>
+            <img src="https://preview.colorlib.com/theme/fashi/img/hero-1.jpg.webp" class="d-block w-100" style="height: 690px;">
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <span>Bag,kids</span>
+                        <h1>Black friday</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore</p>
+                        <a href="#" class="primary-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="off-card">
+                    <h2>Sale <span>50%</span></h2>
+                </div>
+            </div>
+            <img src="https://preview.colorlib.com/theme/fashi/img/hero-2.jpg.webp" class="d-block w-100" style="height: 690px;">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <i class="fa-solid fa-chevron-left"></i>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <i class="fa-solid fa-chevron-right"></i>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- breacrumb section -->
+    <div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <a href="#"><i class="fa fa-home"></i> Home</a>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <span>Men</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- men -->
+    <div class="meninfor">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mendiv">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            993:{
+                items:2
+            },
+            1290:{
+                items:3
+            },
+            2500:{
+                items:4
+            }
+        }
+    })
+    </script>
+    
+    <!-- partner logo -->
+    <div class="partner-logo">
+        <div class="container">
+            <div class="partnerlogos">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-left">
+                        <div class="footer-logo"></div>
+                        <a href="">
+                            <img src="https://preview.colorlib.com/theme/fashi/img/xfooter-logo.png.pagespeed.ic.2qqYFX4O6F.webp" alt="">
+                        </a>
+                        <ul>
+                            <li>Address: 60-49 Road 11378 New York</li>
+                            <li>Phone: +65 11.188.888</li>
+                            <li>Email: hello.colorlib@gmail.com</li>
+                        </ul>
+                        <div class="footer-social">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <div class="footer-widget">
+                        <h5>Information</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Checkout</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Serivius</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-widget">
+                        <h5>My Account</h5>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Shopping Cart</a></li>
+                            <li><a href="#">Shop</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="newslatter-item">
+                        <h5>Join Our Newsletter Now</h5>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter Your Mail">
+                            <button type="button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-reserved">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-text">
+                            "Copyright ©"
+                            <script>document.write(new Date().getFullYear())</script>
+                            All rights reserved | This template is made with 
+                            <i class="fa-regular fa-heart"></i>
+                            " by "
+                            <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </div>
+                        <div class="payment-pic">
+                            <img src="https://preview.colorlib.com/theme/fashi/img/xpayment-method.png.pagespeed.ic.1uSL2uY2Co.webp" alt="payment">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- script -->
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyCm154Y4W5ZOlkbnWtrmH98xYDUs02V1Ls",
+          authDomain: "final-project-js-dc74c.firebaseapp.com",
+          projectId: "final-project-js-dc74c",
+          storageBucket: "final-project-js-dc74c.appspot.com",
+          messagingSenderId: "474585930887",
+          appId: "1:474585930887:web:191baf568f0f41eff5ec22",
+          measurementId: "G-XZ3W9GSDGR"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="men.js"></script>
+    <script src="user.js"></script>
+</body>
+</html>

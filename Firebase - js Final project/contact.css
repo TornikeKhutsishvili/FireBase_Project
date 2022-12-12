@@ -1,0 +1,137 @@
+.breadcrumb-text{
+    border-bottom: 1px solid #ebebeb;
+    padding: 15px 0;
+}
+.breadcrumb-text a{
+    display: inline-block;
+    font-size: 16px;
+    color: #252525;
+    margin-right: 15px;
+    position: relative;
+}
+.breadcrumb-text span{
+    display: inline-block;
+    color: #b2b2b2;
+    margin-left: 15px;
+}
+.breadcrumb-text a:hover{
+    color: #252525;
+}
+.map{
+    padding-top: 80px;
+    padding-bottom: 0;
+}
+.map-inner{
+    height: 610px;
+    position: relative;
+}
+.map-inner iframe{
+    width: 100%;
+    border: 0;
+}
+html, body, #mapDiv{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.map-inner .icon{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-14px,-21px);
+    -ms-transform: translate(-14px,-21px);
+    transform: translate(-14px,-21px);
+}
+.map-inner .icon i{
+    font-size: 48px;
+    color: #e7ab3c;
+}
+.contact-section{
+    padding-top: 75px;
+    padding-bottom: 80px;
+}
+.contact-title{
+    margin-bottom: 30px;
+}
+.contact-title h4{
+    color: #252525;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.contact-widget .cw-item{
+    background: #fff;
+    margin-bottom: 11px;
+    -webkit-box-shadow: 0 8px 35px 10px #e8e8e8;
+    box-shadow: 0 8px 35px 10px #e8e8e8;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+}
+.contact-widget .cw-item .ci-icon{
+    float: left;
+    margin-top: 12px;
+}
+.contact-widget .cw-item .ci-icon i{
+    font-size: 30px;
+    color: #b2b2b2;
+}
+.contact-widget .cw-item .ci-text{
+    display: table;
+    padding-left: 30px;
+}
+.contact-widget .cw-item .ci-text span{
+    color: #b2b2b2;
+    font-size: 16px;
+}
+.contact-widget .cw-item .ci-text p{
+    font-size: 18px;
+    color: #252525;
+    margin-bottom: 0;
+}
+.contact-form .leave-comment h4{
+    color: #292f3b;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.contact-form .leave-comment p{
+    margin-bottom: 38px;
+}
+.contact-form .leave-comment .comment-form input{
+    width: 100%;
+    font-size: 16px;
+    color: #636363;
+    height: 50px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+.contact-form .leave-comment .comment-form textarea{
+    width: 100%;
+    resize: none;
+    font-size: 16px;
+    color: #636363;
+    height: 150px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-bottom: 35px;
+}
+.contact-form .leave-comment .comment-form .site-btn{
+    padding: 13px 35px 11px;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
+    cursor: pointer;
+}
+.site-btn{
+    color: #fff;
+    background: #e7ab3c;
+    border: 1px solid #e7ab3c;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 13px 45px 11px;
+    cursor: pointer;
+}
